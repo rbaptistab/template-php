@@ -44,7 +44,11 @@ class Router
         $controllerNamespace = "app\\controllers\\{$controller}";
 
         $this->controllerFound($controllerNamespace, $controller, $action);
+        
+        $controllerInstance = new $controllerNamespace;
+        $controllerInstance->$action();
 
-        var_dump($controllerNamespace);
+
+        // var_dump($controllerNamespace);
     }
 }
