@@ -1,10 +1,7 @@
 <?php
-ob_start();
 
-require 'home.php';
+session_start();
 
-$content = ob_get_contents();
+require '../vendor/autoload.php';
 
-ob_end_clean();
-
-var_dump($content);
+routerExecute();
